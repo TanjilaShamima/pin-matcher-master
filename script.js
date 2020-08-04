@@ -2,6 +2,8 @@
 document.getElementById("generatePin").addEventListener('click', function() {
     var generateValue = 1000 + Math.floor(Math.random() * 9000);
     document.getElementById("pinInput").value = generateValue;
+
+
 })
 
 
@@ -13,6 +15,7 @@ function buttonValue(num) {
 }
 
 
+
 //submit button
 function submitButton() {
     const generatePin = document.getElementById('pinInput').value;
@@ -20,6 +23,8 @@ function submitButton() {
 
     if (inputPin == "" && generatePin == "") {
         alert('Please generate a pin and try again......');
+        timer();
+
     } else if (inputPin == generatePin) {
         document.getElementById('pin-match').style.display = 'block';
         document.getElementById('pin-missmatch').style.display = 'none';
@@ -28,9 +33,16 @@ function submitButton() {
     } else {
         document.getElementById('pin-missmatch').style.display = 'block';
         document.getElementById('pin-match').style.display = 'none';
+        timer();
+
 
     }
 
+}
+
+
+//Time Controler function
+function timer() {
     const time = document.getElementById('timer').innerText;
     const timeNumber = parseInt(time);
     const newTime = timeNumber - 1;
@@ -39,14 +51,17 @@ function submitButton() {
     if (newTime <= 0) {
         document.getElementById('submitValue').style.display = 'none';
     }
-
 }
 
 
-//reset value 
+
+
+//reset value function
 function resetValue() {
     document.getElementById('pinGiven').value = "";
 }
+
+
 
 //backspace value generate
 function backSpace() {
