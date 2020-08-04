@@ -40,8 +40,6 @@ function submitButton() {
 
 }
 
-
-//Time Controler function
 function timer() {
     const time = document.getElementById('timer').innerText;
     const timeNumber = parseInt(time);
@@ -54,14 +52,10 @@ function timer() {
 }
 
 
-
-
-//reset value function
+//reset value 
 function resetValue() {
     document.getElementById('pinGiven').value = "";
 }
-
-
 
 //backspace value generate
 function backSpace() {
