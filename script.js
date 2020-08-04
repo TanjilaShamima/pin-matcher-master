@@ -21,9 +21,12 @@ function submitButton() {
     const generatePin = document.getElementById('pinInput').value;
     const inputPin = document.getElementById('pinGiven').value;
 
+    const time = document.getElementById('timer').innerText;
+    const timeNumber = parseInt(time);
+
     if (inputPin == "" && generatePin == "") {
         alert('Please generate a pin and try again......');
-        timer();
+        timer(timeNumber);
 
     } else if (inputPin == generatePin) {
         document.getElementById('pin-match').style.display = 'block';
@@ -33,16 +36,16 @@ function submitButton() {
     } else {
         document.getElementById('pin-missmatch').style.display = 'block';
         document.getElementById('pin-match').style.display = 'none';
-        timer();
+        timer(timeNumber);
 
 
     }
 
 }
 
-function timer() {
-    const time = document.getElementById('timer').innerText;
-    const timeNumber = parseInt(time);
+
+//Timer function
+function timer(timeNumber) {
     const newTime = timeNumber - 1;
     document.getElementById('timer').innerText = newTime;
 
