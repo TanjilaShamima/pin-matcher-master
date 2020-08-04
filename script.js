@@ -31,7 +31,14 @@ function submitButton() {
 
     }
 
+    const time = document.getElementById('timer').innerText;
+    const timeNumber = parseInt(time);
+    const newTime = timeNumber - 1;
+    document.getElementById('timer').innerText = newTime;
 
+    if (newTime <= 0) {
+        document.getElementById('submitValue').style.display = 'none';
+    }
 
 }
 
